@@ -8,7 +8,6 @@
 ### Installation:
 #### Install dependencies with composer:
 composer install
-#### If there are php.ini errors:
 #### If there are php.ini errors(mostly related to external drivers):
 composer install --ignore-platform-req=ext-fileinfo
 #### Configure the .env file
@@ -20,7 +19,7 @@ php artisan migrate
 #### Run the database seeds:
 php artisan db:seed
 #### Link local storage
-rm -R public/storage
+rm -R public/storage; 
 php artisan storage:link
 #### Run the local server
 php artisan serve
