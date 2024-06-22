@@ -1,0 +1,24 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use App\Models\PaymentMethod;
+
+class PaymentMethodSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        foreach(PaymentMethod::getAvailableValues() as $method)
+            PaymentMethod::create(
+                [ 'method' => $method ]
+            );
+    }
+}
